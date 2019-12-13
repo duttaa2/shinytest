@@ -12,10 +12,6 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   gnupg1 \
   r-cran-xml2
 
-# Install R packages
-
-RUN R -e "install.packages(c('shiny','shinyWidgets','shinydashboard','magrittr', 'plyr','dplyr','stringr','reshape2','tidyr', 'arules','arulesViz','datasets', 'ggplot2','plotly'))"
-
 # Instalar seu próprio app (e suas dependências)
 COPY ./ /tmp/app/
 RUN R -e "remotes::install_local('/tmp/app/')"
