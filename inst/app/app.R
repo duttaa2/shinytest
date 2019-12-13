@@ -1,1 +1,1 @@
-shiny::shinyApp(shinygcp:::app_ui(), shinygcp:::app_server)
+shinyApp(app_ui,app_server)
